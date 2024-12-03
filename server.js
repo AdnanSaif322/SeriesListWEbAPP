@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
 
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true })); //For parsing application/x-www
 
 //MongoDB Connection
 mongoose
-  .connect("mongodb+srv://saif:104209@cluster0.eebdewt.mongodb.net/tvSeriesDB")
+  .connect("mongoURI")
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB:", err));
 
